@@ -9,16 +9,18 @@ private :
 	string nom;
 	Animal* animal;
 
+	void setNom(string nom);
+	
+
 public:
 	Client(string nom, Animal* animal);
-	Client(const Client& client);
+	Client(const Client& client) = delete;
 	~Client();
 
-	void setNom(string nom);
 	void setAnimal(Animal* animal);
 
-	string getNom() const;
-	Animal* getAnimal() const;
+	string getNom() const { return nom; }
+	Animal* getAnimal() const { return animal; }
 	
 };
 

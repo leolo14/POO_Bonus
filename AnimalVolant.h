@@ -6,14 +6,15 @@ class AnimalVolant : public Animal
 private :
 	int vitesseVol;
 
+	void setVitesseVol(int vitesseVol);
+
 public:
 	AnimalVolant(int id, string nom, int vitesseVol);
-	AnimalVolant(const AnimalVolant& animal);
 	~AnimalVolant();
 	
-	void setVitesseVol(int vitesseVol);
-	int getVitesseVol() const;
+	int getVitesseVol() const {return vitesseVol; } 
+	virtual string getCarnetMedical() const = 0;
 
-	void getCarnetMedical() const override;
+	void action() const override;
 };
 

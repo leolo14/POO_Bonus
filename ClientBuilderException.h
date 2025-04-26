@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-class Exception : public std::exception
+class ClientBuilderException : public std::exception
 {
 public:
     /** Constructor (C strings).
@@ -12,21 +12,21 @@ public:
      *                 Hence, responsibility for deleting the char* lies
      *                 with the caller.
      */
-    explicit Exception(const char* message)
+    explicit ClientBuilderException(const char* message)
         : msg_(message) {
     }
 
     /** Constructor (C++ STL strings).
      *  @param message The error message.
      */
-    explicit Exception(const std::string& message)
+    explicit ClientBuilderException(const std::string& message)
         : msg_(message) {
     }
 
     /** Destructor.
      * Virtual to allow for subclassing.
      */
-    virtual ~Exception() noexcept {}
+    virtual ~ClientBuilderException() noexcept {}
 
     /** Returns a pointer to the (constant) error description.
      *  @return A pointer to a const char*. The underlying memory
@@ -36,6 +36,8 @@ public:
     virtual const char* what() const noexcept {
         return msg_.c_str();
     }
+
+    
 
 protected:
     /** Error message.

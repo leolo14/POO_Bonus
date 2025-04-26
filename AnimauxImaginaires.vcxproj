@@ -127,22 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Acromentule.h" />
     <ClInclude Include="Animal.h" />
     <ClInclude Include="AnimalTerrestre.h" />
     <ClInclude Include="AnimalVolant.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientBuilder.h" />
-    <ClInclude Include="Exception.h" />
-    <ClInclude Include="Terrestre.h" />
+    <ClInclude Include="ClientBuilderException.h" />
+    <ClInclude Include="Hippogriffe.h" />
+    <ClInclude Include="Licorne.h" />
+    <ClInclude Include="Sombral.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Acromentule.cpp" />
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="AnimalTerrestre.cpp" />
     <ClCompile Include="AnimalVolant.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientBuilder.cpp" />
-    <ClCompile Include="Exception.cpp" />
-    <ClCompile Include="Terrestre.cpp" />
+    <ClCompile Include="Hippogriffe.cpp" />
+    <ClCompile Include="Licorne.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Sombral.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

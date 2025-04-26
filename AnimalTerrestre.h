@@ -7,23 +7,16 @@ class AnimalTerrestre : public Animal
 {
 private :
 	int forcePhyique;
-	string capaciteSpeciale;
+
+	void setForcePhyique(int forcePhyique);
 
 public:
-	AnimalTerrestre(int id, string nom, string capaciteSpeciale);
-	AnimalTerrestre(const AnimalTerrestre& animal);
+	AnimalTerrestre(int id, string nom, int forcePhysique);
 	~AnimalTerrestre();
 
-	virtual string getNom() const override { return "Animal Terrestre"; }
+	int getForcePhyique() const { return forcePhyique; }
+	virtual string getCarnetMedical() const = 0;
 
-	virtual void setForcePhyique(int forcePhyique) = 0;
-	virtual void setCapaciteSpeciale(string capaciteSpeciale) = 0;
-
-	virtual int getForcePhyique() const = 0;
-	virtual string getCapaciteSpeciale() const = 0;
-
-	virtual void getCarnetMedical() const override { 
-		cout << "Animal Terrestre num :" + getId() << endl;
-	}
+	void action() const override;
 };
 

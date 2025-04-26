@@ -1,26 +1,29 @@
 #pragma once
 #include <string>
-#include "Exception.h"
-using namespace std;
 #include <iostream>
+using namespace std;
+
 
 class Animal
 {
 private :
 	int id;
-	
-
-public:
-	Animal(int id);
-	Animal(const Animal& animal);
-	virtual ~Animal();
+	string nom;
 
 	void setId(int id);
-	
-	
-	int getId() const { return id; }
-	virtual string getNom() const { return "Animal"; }
+	void setNom(string nom);
 
-	virtual void getCarnetMedical() const =0;
+public:
+	Animal(int id, string nom);
+	Animal(const Animal& animal) = delete;
+	virtual ~Animal();
+
+
+	int getId() const { return id; }
+	virtual string getNom() const { return nom; }
+
+	virtual void action() const = 0;
+
+	virtual string getCarnetMedical() const = 0;
 };
 
